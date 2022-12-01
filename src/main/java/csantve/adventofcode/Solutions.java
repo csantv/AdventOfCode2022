@@ -50,7 +50,7 @@ public class Solutions {
 
     private InputStream getResource(String path) throws IOException {
         InputStream is = classloader.getResourceAsStream(path);
-        if (is == null) throw new IOException();
+        if (is == null) throw new IOException(String.format("File %s not found.", path));
         return is;
     }
 }
