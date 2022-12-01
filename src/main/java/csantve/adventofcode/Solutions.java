@@ -8,12 +8,23 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Solutions {
-    private final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+    private static final ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+
+    public void day2() {
+        System.out.println("=== DAY 2 SOLUTION ===");
+        try (InputStream is = getResource("day2.txt")) {
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader br = new BufferedReader(isr);
+            String line = br.readLine();
+            System.out.println(line);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public void day1() {
         System.out.println("=== DAY 1 SOLUTION ===");
-        try (InputStream is = classloader.getResourceAsStream("day1/input.txt")) {
-            assert is != null;
+        try (InputStream is = getResource("day1.txt")) {
             InputStreamReader isr = new InputStreamReader(is);
             BufferedReader br = new BufferedReader(isr);
             ArrayList<Long> calories = new ArrayList<>();
@@ -31,7 +42,15 @@ public class Solutions {
             System.out.println(max);
 
             calories.sort(Collections.reverseOrder());
-            System.out.println(calories.get(0)+calories.get(1)+calories.get(2));
-        } catch (IOException ignore) {}
+            System.out.println(calories.get(0) + calories.get(1) + calories.get(2));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private InputStream getResource(String path) throws IOException {
+        InputStream is = classloader.getResourceAsStream(path);
+        if (is == null) throw new IOException();
+        return is;
     }
 }

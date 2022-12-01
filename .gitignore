@@ -11,6 +11,8 @@ target/
 *.iws
 *.iml
 *.ipr
+**/.idea/workspace.xml
+**/.idea/tasks.xml
 
 ### Eclipse ###
 .apt_generated
