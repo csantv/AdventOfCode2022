@@ -38,6 +38,7 @@ public class Solutions {
         lossesAgainst.put("Y", "C");
         lossesAgainst.put("Z", "A");
 
+        // == BEGIN FIRST PART ==
         try (InputStream is = getResource("day2.txt")) {
             InputStreamReader isr = new InputStreamReader(is);
             BufferedReader br = new BufferedReader(isr);
@@ -63,6 +64,7 @@ public class Solutions {
         }
         // == END FIRST PART ==
 
+        // == BEGIN SECOND PART ==
         try (InputStream is = getResource("day2.txt")) {
             InputStreamReader isr = new InputStreamReader(is);
             BufferedReader br = new BufferedReader(isr);
@@ -90,6 +92,7 @@ public class Solutions {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        // == END SECOND PART ==
     }
 
     public void day1() {
