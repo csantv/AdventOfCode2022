@@ -1,12 +1,11 @@
 package csantve.adventofcode;
 
+import csantve.adventofcode.solutions.Day;
+import csantve.adventofcode.solutions.Day6;
+
 public class Main {
     public static void main(String[] args) {
-        Solutions solutions = new Solutions();
-        solutions.day5();
-        solutions.day4();
-        solutions.day3();
-        solutions.day2();
-        solutions.day1();
+        Day day = new Day6();
+        day.solve();
     }
 }
